@@ -18,10 +18,36 @@
 <body>
   <header>
     <div class="container">
+      <div class="row">
+        <h2></h2>
+      </div>
     </div>
   </header>
   <main class="container">
-    <div data-view="entry-form"></div>
+    <div data-view="entry-form">
+      <div class="row">
+
+        <div class="column-half">
+          <h1>New Entry</h1>
+          <img src="" alt="">
+        </div>
+        <div class="column-half">
+          <h3>Title</h3>
+          <input type="text">
+          <h3>Photo URL</h3>
+          <input type="text">
+        </div>
+        <div class="column-full">
+          <h3>Notes</h3>
+          <input type="text">
+        </div>
+        <div class="column-full">
+          <button>Save</button>
+        </div>
+
+      </div>
+
+    </div>
     <div data-view="entries" class="hidden"></div>
   </main>
   <script src="js/data.js"></script>
