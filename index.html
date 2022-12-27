@@ -16,36 +16,38 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
+  <header class="background-purple">
     <div class="container">
       <div class="row">
-        <h2></h2>
+        <div class="column-full"><h3 class="fontwhite">Code Journal</h3></div>
       </div>
     </div>
   </header>
   <main class="container">
     <div data-view="entry-form">
-      <div class="row">
-
-        <div class="column-half">
-          <h1>New Entry</h1>
-          <img src="" alt="">
+      <form id="new-entry">
+        <div class="row">
+          <div class="column-full">
+            <h1>New Entry</h1>
+          </div>
+          <div class="column-half">
+            <img class="mainimage" src="images/placeholder-image-square.jpg" alt="placeholder-image-square">
+          </div>
+          <div class="column-half">
+            <label for="title">Title</label>
+            <input id="title" type="text">
+            <label for="photourl">Photo URL</label>
+            <input id="photourl" type="text">
+          </div>
+          <div class="column-full">
+            <label for="notes">Notes</label>
+            <textarea name="note" id="notes" rows="7"></textarea>
+          </div>
+          <div class="column-full alignright">
+            <button class="savebtn fontwhite" type="submit">SAVE</button>
+          </div>
         </div>
-        <div class="column-half">
-          <h3>Title</h3>
-          <input type="text">
-          <h3>Photo URL</h3>
-          <input type="text">
-        </div>
-        <div class="column-full">
-          <h3>Notes</h3>
-          <input type="text">
-        </div>
-        <div class="column-full">
-          <button>Save</button>
-        </div>
-
-      </div>
+      </form>
 
     </div>
     <div data-view="entries" class="hidden"></div>
