@@ -3,6 +3,10 @@ body {
   background-color: #f0f0f0;
 }
 
+h2 {
+  margin: 0;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -38,6 +42,10 @@ textarea {
 input:focus,
 textarea:focus {
   outline-color: #562b81;
+}
+
+.purple {
+  color: #562b81;
 }
 
 .main-image {
@@ -87,6 +95,8 @@ textarea:focus {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .padhead {
@@ -105,7 +115,28 @@ textarea:focus {
   font-size: 1.25rem;
 }
 
+.flex-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.only-pad-bottom {
+  padding-bottom: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.align-icon {
+  text-align: right;
+}
+
 @media screen and (min-width: 768px) {
+  .pad-left-1 {
+    padding-left: 1.25rem;
+  }
+
   .main-image {
     width: 100%;
     object-fit: cover;

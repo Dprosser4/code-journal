@@ -32,22 +32,39 @@ function renderEntry(entry) {
   var imgDiv = document.createElement('div');
   var entryImg = document.createElement('img');
   var textDiv = document.createElement('div');
+  var titleDiv = document.createElement('div');
   var titleH2 = document.createElement('h2');
+  var iconDiv = document.createElement('div');
+  var icon = document.createElement('i');
+  var pDiv = document.createElement('div');
   var noteP = document.createElement('p');
 
-  imgDiv.setAttribute('class', 'column-half');
-  textDiv.setAttribute('class', 'column-half');
+  imgDiv.setAttribute('class', 'column-half only-pad-bottom');
+  textDiv.setAttribute('class', 'column-half flex-title');
   entryImg.setAttribute('class', 'main-image');
+  titleDiv.setAttribute('class', 'column-half-always only-pad-bottom');
+  iconDiv.setAttribute('class', 'column-half-always align-icon only-pad-bottom');
+  icon.setAttribute('class', 'fa-solid fa-pencil purple fa-xl');
+  pDiv.setAttribute('class', 'column-full only-pad-bottom');
 
   entryImg.setAttribute('src', entry.photourl);
   titleH2.textContent = entry.title;
+  titleH2.setAttribute('class', 'pad-left-1');
   noteP.textContent = entry.note;
+  noteP.setAttribute('class', 'pad-left-1');
 
   imgDiv.appendChild(entryImg);
-  textDiv.appendChild(titleH2);
-  textDiv.appendChild(noteP);
+  titleDiv.appendChild(titleH2);
+  iconDiv.appendChild(icon);
+  pDiv.appendChild(noteP);
+
+  textDiv.appendChild(titleDiv);
+  textDiv.appendChild(iconDiv);
+  textDiv.appendChild(pDiv);
+
   li.appendChild(imgDiv);
   li.appendChild(textDiv);
+  li.setAttribute('data-entry-id', entry.entryId);
 
   return li;
 }
