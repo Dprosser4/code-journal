@@ -1,0 +1,72 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+}
+
+label {
+  font-weight: 700;
+  padding-top: 1.75rem;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 3px;
+  border-color: #b6b6b6;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", Geneva, Verdana, sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline-color: #562b81;
+}
+
+.main-image {
+  width: 100%;
+  object-fit: cover;
+  max-height: 15rem;
+  border-radius: 3px;
+}
+
+.background-purple {
+  background-color: #562b81;
+}
+
+.font-white {
+  color: white;
+  font-weight: lighter;
+}
+
+.save-btn {
+  background-color: #562b81;
+  border-radius: 3px;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .main-image {
+    width: 100%;
+    object-fit: cover;
+    max-height: max-content;
+  }
+}
