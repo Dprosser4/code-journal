@@ -19,12 +19,15 @@
   <header class="background-purple">
     <div class="container">
       <div class="row">
-        <div class="column-full"><h3 class="font-white">Code Journal</h3></div>
+        <div class="column-full headalign">
+          <div class="padhead"><a class="font-white font-size-large">Code Journal</a> </div>
+          <div class="padmenu"><a class="font-white">Entries</a></div>
+        </div>
       </div>
     </div>
   </header>
   <main class="container">
-    <div data-view="entry-form">
+    <div data-view="entry-form" class="hidden">
       <form id="new-entry">
         <div class="row">
           <div class="column-full">
@@ -50,7 +53,21 @@
       </form>
 
     </div>
-    <div data-view="entries" class="hidden"></div>
+    <div data-view="entries" class="">
+      <div class="row">
+        <div class="column-half-always" >
+          <h1>Entries</h1>
+        </div>
+        <div class="column-half-always new-btn-align">
+          <div>
+            <button class="new-btn font-white">New</button>
+          </div>
+        </div>
+      </div>
+      <ul id="entry-list">
+
+      </ul>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

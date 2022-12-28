@@ -13,14 +13,28 @@
   flex-wrap: wrap;
 }
 
+li {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
 .column-full,
 .column-half {
   width: 100%;
 }
 
+.column-half-always {
+  width: 50%;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
+  }
+
+  .column-half-always {
+    padding: 0.75rem;
   }
 
   .column-full,

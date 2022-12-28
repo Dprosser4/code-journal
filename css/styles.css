@@ -3,6 +3,12 @@ body {
   background-color: #f0f0f0;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 label {
   font-weight: 700;
   padding-top: 1.75rem;
@@ -57,16 +63,48 @@ textarea:focus {
   padding: 0.5rem 1rem;
 }
 
+.new-btn {
+  background-color: #562b81;
+  border-radius: 3px;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.new-btn-align {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .align-right {
   display: flex;
   justify-content: flex-end;
   padding-top: 1.5rem;
 }
 
+.headalign {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.padhead {
+  padding: 1rem 0;
+}
+
+.padmenu {
+  padding: 1rem 1.25rem;
+}
+
+.font-size-large {
+  font-size: 1.25rem;
+}
+
 @media screen and (min-width: 768px) {
   .main-image {
     width: 100%;
     object-fit: cover;
-    max-height: max-content;
+    max-height: 25rem;
   }
 }
