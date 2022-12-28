@@ -20,8 +20,11 @@ function getInputs(event) {
   entryData.entryId = data.nextEntryId;
   data.nextEntryId++;
   data.entries.push(entryData);
+  $entryList.prepend(renderEntry(entryData));
   $photoPreview.setAttribute('src', 'images/placeholder-image-square.jpg');
   $entryForm.reset();
+  viewSwap('entries');
+  toggleNoEntries();
 }
 
 function renderEntry(entry) {
@@ -50,8 +53,52 @@ function renderEntry(entry) {
 }
 
 var $entryList = document.querySelector('#entry-list');
+document.addEventListener('DOMContentLoaded', createPreviousDOMTree);
 
-for (var i = 0; i < data.entries.length; i++) {
-  var storedEntry = renderEntry(data.entries[i]);
-  $entryList.appendChild(storedEntry);
+function createPreviousDOMTree(event) {
+  for (var i = data.entries.length - 1; i > 0; i--) {
+    var storedEntry = renderEntry(data.entries[i]);
+    $entryList.appendChild(storedEntry);
+  }
+  viewSwap(data.view);
+  toggleNoEntries();
+}
+
+var $noEntryLi = document.querySelector('#noEntries');
+
+function toggleNoEntries() {
+  if (data.entries.length === 0) {
+    $noEntryLi.setAttribute('class', '');
+  } else if (data.entries.length > 0) {
+    $noEntryLi.setAttribute('class', 'hidden');
+  }
+}
+
+var $entryFormView = document.querySelector('#entry-form');
+var $entriesView = document.querySelector('#entries');
+
+function viewSwap(string) {
+  if (string === 'entries') {
+    $entryFormView.setAttribute('class', 'hidden');
+    $entriesView.setAttribute('class', '');
+    data.view = 'entries';
+  } else if (string === 'entry-form') {
+    $entryFormView.setAttribute('class', '');
+    $entriesView.setAttribute('class', 'hidden');
+    data.view = 'entry-form';
+  }
+}
+
+var $entriesMenu = document.querySelector('#entries-menu');
+$entriesMenu.addEventListener('click', changeToEntriesView);
+
+function changeToEntriesView(event) {
+  viewSwap('entries');
+}
+
+var $newBtn = document.querySelector('#new-btn');
+$newBtn.addEventListener('click', changeToEntryFormView);
+
+function changeToEntryFormView(event) {
+  viewSwap('entry-form');
 }
