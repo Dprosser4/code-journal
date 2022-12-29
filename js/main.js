@@ -133,6 +133,7 @@ $newBtn.addEventListener('click', changeToEntryFormView);
 function changeToEntryFormView(event) {
   viewSwap('entry-form');
   $photoPreview.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $deleteBtn.setAttribute('class', 'delete-btn hover-pointer hidden');
   $entryForm.reset();
   $entryFormTitle.textContent = 'New Entry';
 }
@@ -172,4 +173,18 @@ function showModal(event) {
 }
 function hideModal(event) {
   $overlay.setAttribute('class', 'overlay hidden');
+}
+
+var $confirmBtn = document.querySelector('.confirm-btn');
+$confirmBtn.addEventListener('click', deleteEntry);
+
+function deleteEntry(event) {
+  data.entries.splice(editEntryIndexTracker, 1);
+  var domDeleteString = '[data-entry-id="' + data.editing.entryId + '"]';
+  var $deleteDom = document.querySelector(domDeleteString);
+  $deleteDom.remove();
+  $overlay.setAttribute('class', 'overlay hidden');
+  viewSwap('entries');
+  data.editing = null;
+  toggleNoEntries();
 }
