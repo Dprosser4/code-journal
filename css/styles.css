@@ -3,6 +3,10 @@ body {
   background-color: #f0f0f0;
 }
 
+h2 {
+  margin: 0;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -40,11 +44,19 @@ textarea:focus {
   outline-color: #562b81;
 }
 
+.purple {
+  color: #562b81;
+}
+
+.purple:hover {
+  cursor: pointer;
+}
+
 .main-image {
   width: 100%;
   object-fit: cover;
   max-height: 15rem;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .background-purple {
@@ -54,6 +66,10 @@ textarea:focus {
 .font-white {
   color: white;
   font-weight: lighter;
+}
+
+.hover-pointer:hover {
+  cursor: pointer;
 }
 
 .save-btn {
@@ -69,6 +85,10 @@ textarea:focus {
   border: none;
   font-size: 1.25rem;
   padding: 0.5rem 1rem;
+}
+
+.new-btn:hover {
+  cursor: pointer;
 }
 
 .new-btn-align {
@@ -87,6 +107,8 @@ textarea:focus {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .padhead {
@@ -105,7 +127,30 @@ textarea:focus {
   font-size: 1.25rem;
 }
 
+.flex-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.only-pad-bottom {
+  padding-bottom: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.align-icon {
+  text-align: right;
+  position: relative;
+  top: 7px;
+}
+
 @media screen and (min-width: 768px) {
+  .pad-left-1 {
+    padding-left: 1.25rem;
+  }
+
   .main-image {
     width: 100%;
     object-fit: cover;

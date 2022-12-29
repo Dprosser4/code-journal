@@ -21,7 +21,7 @@
       <div class="row">
         <div class="column-full headalign">
           <div class="padhead"><a class="font-white font-size-large">Code Journal</a> </div>
-          <div class="padmenu"><a id="entries-menu" class="font-white">Entries</a></div>
+          <div class="padmenu"><a id="entries-menu" class="font-white hover-pointer">Entries</a></div>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <form id="new-entry">
         <div class="row">
           <div class="column-full">
-            <h1>New Entry</h1>
+            <h1 id="entry-form-title">New Entry</h1>
           </div>
           <div class="column-half">
             <img class="main-image" src="images/placeholder-image-square.jpg" alt="placeholder-image-square">
@@ -47,7 +47,7 @@
             <textarea required name="note" id="notes" rows="7"></textarea>
           </div>
           <div class="column-full align-right">
-            <button class="save-btn font-white" type="submit">SAVE</button>
+            <button class="save-btn font-white hover-pointer" type="submit">SAVE</button>
           </div>
         </div>
       </form>
@@ -58,13 +58,14 @@
         <div class="column-half-always" >
           <h1>Entries</h1>
         </div>
-        <div id="new-btn" class="column-half-always new-btn-align">
+        <div class="column-half-always new-btn-align">
           <div>
-            <button class="new-btn font-white">New</button>
+            <button id="new-btn" class="new-btn font-white">New</button>
           </div>
         </div>
       </div>
       <ul id="entry-list">
+
         <li id="noEntries" class=""><div class="column-full text-align-center"><p>No entries have been recorded.</p></div></li>
       </ul>
     </div>
