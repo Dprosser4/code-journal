@@ -44,6 +44,48 @@ textarea:focus {
   outline-color: #562b81;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.759);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  width: 19rem;
+  height: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cancel-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background-color: #b6b6b6;
+}
+
+.confirm-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background-color: #dc2626;
+}
+
 .purple {
   color: #562b81;
 }
@@ -87,8 +129,18 @@ textarea:focus {
   padding: 0.5rem 1rem;
 }
 
-.new-btn:hover {
-  cursor: pointer;
+.delete-btn {
+  border: none;
+  color: red;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+.align-delete-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .new-btn-align {
@@ -149,6 +201,14 @@ textarea:focus {
 @media screen and (min-width: 768px) {
   .pad-left-1 {
     padding-left: 1.25rem;
+  }
+
+  .only-pad-bottom {
+    padding-left: 0.75rem;
+  }
+
+  .headalign {
+    padding: 0 0.75rem;
   }
 
   .main-image {

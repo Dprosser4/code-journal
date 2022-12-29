@@ -133,6 +133,7 @@ $newBtn.addEventListener('click', changeToEntryFormView);
 function changeToEntryFormView(event) {
   viewSwap('entry-form');
   $photoPreview.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $deleteBtn.setAttribute('class', 'delete-btn hover-pointer hidden');
   $entryForm.reset();
   $entryFormTitle.textContent = 'New Entry';
 }
@@ -145,6 +146,7 @@ function editBtnIcon(event) {
   if (event.target.tagName === 'I') {
     viewSwap('entry-form');
     $entryFormTitle.textContent = 'Edit Entry';
+    $deleteBtn.setAttribute('class', 'delete-btn hover-pointer');
     var currentEntryId = event.target.closest('li');
     currentEntryId = Number(currentEntryId.getAttribute('data-entry-id'));
     for (var i = 0; i < data.entries.length; i++) {
@@ -158,4 +160,31 @@ function editBtnIcon(event) {
       }
     }
   }
+}
+
+var $deleteBtn = document.querySelector('.delete-btn');
+$deleteBtn.addEventListener('click', showModal);
+var $overlay = document.querySelector('.overlay');
+var $cancelBtn = document.querySelector('.cancel-btn');
+$cancelBtn.addEventListener('click', hideModal);
+
+function showModal(event) {
+  $overlay.setAttribute('class', 'overlay');
+}
+function hideModal(event) {
+  $overlay.setAttribute('class', 'overlay hidden');
+}
+
+var $confirmBtn = document.querySelector('.confirm-btn');
+$confirmBtn.addEventListener('click', deleteEntry);
+
+function deleteEntry(event) {
+  data.entries.splice(editEntryIndexTracker, 1);
+  var domDeleteString = '[data-entry-id="' + data.editing.entryId + '"]';
+  var $deleteDom = document.querySelector(domDeleteString);
+  $deleteDom.remove();
+  $overlay.setAttribute('class', 'overlay hidden');
+  viewSwap('entries');
+  data.editing = null;
+  toggleNoEntries();
 }

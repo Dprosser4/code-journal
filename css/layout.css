@@ -33,6 +33,10 @@ li {
     max-width: 900px;
   }
 
+  .column-half-always {
+    padding: 0 0.75rem;
+  }
+
   .column-full,
   .column-half {
     padding: 0 0.75rem;
