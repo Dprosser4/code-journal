@@ -48,11 +48,15 @@ textarea:focus {
   color: #562b81;
 }
 
+.purple:hover {
+  cursor: pointer;
+}
+
 .main-image {
   width: 100%;
   object-fit: cover;
   max-height: 15rem;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .background-purple {
@@ -62,6 +66,10 @@ textarea:focus {
 .font-white {
   color: white;
   font-weight: lighter;
+}
+
+.hover-pointer:hover {
+  cursor: pointer;
 }
 
 .save-btn {
@@ -77,6 +85,10 @@ textarea:focus {
   border: none;
   font-size: 1.25rem;
   padding: 0.5rem 1rem;
+}
+
+.new-btn:hover {
+  cursor: pointer;
 }
 
 .new-btn-align {
@@ -130,6 +142,8 @@ textarea:focus {
 
 .align-icon {
   text-align: right;
+  position: relative;
+  top: 7px;
 }
 
 @media screen and (min-width: 768px) {
